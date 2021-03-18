@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="main-content">
+    {{>header }}
+    <article class="widget">
+      <form class="weatherLocation">
+        <input type="text" placeholder="ใส่ประเทศที่ต้องการ">
+        <button>ค้นหา</button>
+      </form>
+      <div class="weatherIcon">
+        <i class="wi wi-da-cloudy"></i>
+      </div>
+      <div class="weatherInfo">
+        <div class="temperature">
+          <span></span>
+        </div>
+        <div class="description">
+          <div class="weatherCondition"></div>
+          <div class="place"></div>
+        </div>
+      </div>
+      <div class="date"></div>
+    </article>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
