@@ -30,11 +30,11 @@ app.get('/weather', (req, res) => {
   const address = req.query.address
   if(!address) {
     return res.send({
-      error: "You must enter address in search text box"
+      error: "คุณต้องใส่ที่อยู่ของประเทศนั้นๆหรือเมืองในแต่ละประเทศนั้น"
     })
   }
 
-  weatherData(address, (error, {temperature, description, cityName}) => {
+  weatherData(address, (error, {temperature, description, cityName} = {}) => {
     if(error) {
       return res.send({
         error
@@ -52,7 +52,7 @@ app.get('/weather', (req, res) => {
 // 404 Not found
 app.get('*', (req, res) => {
   res.render('404', {
-    title: "Page not found"
+    title: "ไม่พบหน้าเพจ"
   })
 });
 
